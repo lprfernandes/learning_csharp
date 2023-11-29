@@ -45,6 +45,8 @@ FCL = BCL + ADO.NET + ASP.NET + WPF...
 
 .NET = .NET Framework + .NET Core
 
+<br><br>
+
 # Classification of language types
 
 ![LanguageClassification](Ipb9e.png)
@@ -56,6 +58,8 @@ Which means in the case of statically-type languages that all variables must fir
 ## Strongly-typed vs Weakly-typed?
 How strictly types are distinguished (e.g. whether the language tries to do an implicit conversion from strings to numbers).
 
+<br><br>
+
 # Heap and Stack
 A stack is a special area of computer’s memory which stores temporary vars created by a function. In stack, vars are declared, stored and initialized during runtime.
 It's a temporary storage memory. When the computing task is complete, the memory of the var will be automatically erased. The stack section mostly contains methods, local vars, and ref vars.
@@ -63,25 +67,27 @@ It's a temporary storage memory. When the computing task is complete, the memory
 The heap is a memory used by programming languages to store global vars. By default, all global vars are stored in heap memory space. It supports Dynamic memory allocation.
 The heap is not managed automatically for you and is not as tightly managed by the CPU. It is more like a free-floating region of memory.
 
+<br><br>
+
 # Coding Standards
 * Reasonable variable names
 * Proper Method Names
 * Comment code
 
-  1. single line "//"
-  2. multiline /_comment_/
-  3. xml documentation comment and regions
-     "
-     ///<summary>
-     //This method does this thing
-     ///</summary>
-     "
+1. single line "//"
+2. multiline /_comment_/
+3. xml documentation comment and regions
 
-     #region Public Properties
-        ...//prop1
-        ...//prop2
-     #endregion
-        //This allows you to create a region that you can minimize
+        ///<summary>
+        //This method does this thing
+        ///</summary>
+        
+
+        #region Public Properties
+                ...//prop1
+                ...//prop2
+        #endregion
+                //This allows you to create a region that you can minimize
 
   4. Class names with Capital Letters with PascalCasing (ex ClientActivity)
   5. Method names with the same approach (ex MainMethod)
@@ -91,6 +97,8 @@ The heap is not managed automatically for you and is not as tightly managed by t
   9. don't use "\_" between var names
   10. use singular nouns to name classes "Program", "Employee", "Invoice" etc
   11. to more coding conventions visit [C# Coding Standards Best Practices](https://www.dofactory.com/csharp-coding-standards)
+
+<br><br>
 
 # OOP Terminology and Concepts
 * Object - small unit (entity) in the program. Can be a var, a data structure, a function, etc. It's an instance of a particular class.
@@ -160,6 +168,8 @@ When inside a class invokes another class as one of its members:
                 public string Owner {get;set} = "No owner";
         }
 
+<br><br>
+
 # C# Language
 * OOP language
 * Case Sensitive
@@ -221,7 +231,7 @@ We can have the default value of every type by:
 ## Non-Primitive (Reference) data types
 Saves a reference on the heap pointing to the actual value in the stack
 
-            string myName = "Luis"; default = null; range from 0 to 2 billion chars
+            string myName = "John"; default = null; range from 0 to 2 billion chars
 
 ## Operators
 
@@ -336,7 +346,7 @@ What makes an object iterable? The implementation of two generic interfaces: IEn
         }
         while (condition is true)
 
-Do While vs While - The Do While Always runs at least once! Dangers of whiles and do whiles - infinite loops
+Do While vs While - The Do While Always runs at least once!<br> Dangers of whiles and do whiles - infinite loops
 
 ### Jump Statements
 * break; - steps off the current loop or switch statement
@@ -351,6 +361,8 @@ Do While vs While - The Do While Always runs at least once! Dangers of whiles an
         goto label;
 
 CAUTION! When we jump backwards, this can create an infinite loop (as in the case above). Therefore, backwards jumps must be always accompanied by a condition (break statement).
+
+<br><br>
 
 ## Conversion
 ### Implicit Conversion
@@ -439,7 +451,7 @@ For routines that perform extensive string manipulation (modify a string numerou
 
 ### String Formatting
 
-        string name = Luís;
+        string name = John;
         int age = 35;
 
         Console.WriteLine("Hello my name is {0} , and I am {1} years old", name, age);
@@ -451,8 +463,8 @@ For routines that perform extensive string manipulation (modify a string numerou
 PS: Constant strings may be initialized
 ed using string interpolation if all the placeholders are other constant strings.
 
-        const string myFirstName = "Luís";
-        const string myLastName = "Fernandes";
+        const string myFirstName = "John";
+        const string myLastName = "Smith";
         const string myFullName = $"{myFirstName} {myLastName}";
 
 ### Verbatin strings
@@ -514,7 +526,6 @@ Used when there are many chars to escape in a string for ex when saving strings 
         {n} - searches exactly n digits<br> 
         {n,m} - searches at least n digits but no more than m times.
 
-
 ## Constants
 To define non-integral constants, group them in a single static class named ex:Constants. This will require that all references to the constants be prefaced with the class name
 
@@ -550,6 +561,8 @@ Useful methods and properties from this class:
         DateTime.AddHours
         ...
 
+<br><br>
+
 # Fields
 It's a var of any type that is declared directly in a class or struct. Fields are members of their containing type.
 
@@ -571,6 +584,8 @@ Typically they should be initialized inside the constructor.
 const vs readonly = can't change the value in both.
 
 const is k, meaning we already know the value at compile time (a url for an api for ex), a readonly is not yet know at compile time but it will be instantiated with a value (normally through a constructor) known or unknown and then not changeable thereafter.
+
+<br><br>
 
 # Methods
 ## Structure
@@ -604,7 +619,6 @@ Method overloading - Having the same method multiple times as long as the signat
 * internal - accessible only from the same namespace (project)
 * public - accessible everywhere in the project
 
-<br>
 PS: Best Practice - whenever you declare a class, member or method, go for the most restrictive access modifier and then relax it if necessary.
 
 ## Modifiers
@@ -805,21 +819,24 @@ To do that we must create a public static class with a static method. Then pass 
 
 This can be used when we don't have access to class we're extending, or when we want to chain multiple methods. (In this last case as we add the method to the class we can chain it)
 
+<br><br>
+
 # Logic Gates and Bool Algebra
 
-AND => This and that; The output is true when both inputs are true.
-OR => This or that; The output is true if <u>at least one</u> input is true.
-XOR => Either this or that (but not both); Only true if only 1 of them is true.
-NOT => Inverter
-NAND => Either one or neither; Inverse of AND; True when one is true or the other or both.
-NOR => Nor this nor that; Inverse of OR; Only true when 1 and 2 are false.
+AND => This and that; The output is true when both inputs are true. <br>
+OR => This or that; The output is true if <u>at least one</u> input is true.<br>
+XOR => Either this or that (but not both); Only true if only 1 of them is true.<br>
+NOT => Inverter<br>
+NAND => Either one or neither; Inverse of AND; True when one is true or the other or both.<br>
+NOR => Nor this nor that; Inverse of OR; Only true when 1 and 2 are false.<br>
 XNOR => All or nothing; Only true when inputs are equal.
+
+<br><br>
 
 # Classes
 
         class Human
         {
-
                 //member variable
                 private string firstName;
                 private string lastName;
@@ -832,8 +849,8 @@ XNOR => All or nothing; Only true when inputs are equal.
         }
         class Program
         {
-                Human luis = new Human("Luís","Fernandes");
-                luis.IntroduceSelf();
+                Human john = new Human("John","Smith");
+                john.IntroduceSelf();
         }
 
 ## Class Access Modifiers 
@@ -889,10 +906,10 @@ It can't take access modifiers or params. There can be only one constructor. It 
 
         class SimpleClass
         {
-        // Static var that must be initialized at run time.
-        static readonly long baseline;
+                // Static var that must be initialized at run time.
+                static readonly long baseline;
 
-        // Static constructor is called at most one time, before any instance constructor is invoked or member is accessed.
+                // Static constructor is called at most one time, before any instance constructor is invoked or member is accessed.
                 static SimpleClass()
                 {
                         baseline = DateTime.Now.Ticks;
@@ -1027,6 +1044,8 @@ Ex: we want to access the index not by int but by writing "first","second", etc
                 }
         }
 
+<br><br>
+
 # Abstract Classes and Methods
 Uses "abstract" before class to designate a class which can't produce instances. Moreover, similarly to interfaces, can have methods and properties that it will enforce on whichever class derives from it.
 Acts as an conceptual aggregator of classes. Ex an abstract class called shapes, from which derive class circle and rectangle
@@ -1044,7 +1063,7 @@ In case of abstract methods, these only have the signature, the implementation d
        }
 
 
-# Abstract Classes Vs Interfaces
+## Abstract Classes Vs Interfaces
 Abstract Class - A class that can't be instantiated. 
 
 Interfaces - Contract that can only contain method declarations (not method definitions)
@@ -1069,6 +1088,8 @@ Interfaces define capabilities of what an object can do
 
 * Abstract class -> what object is
 * Interface -> what an object can do
+
+<br><br>
 
 # Interfaces
 Set of obligations of implementation by the class.It's a manifest of methods and properties that MUST be implemented in the class which is implementing the interface.
@@ -1137,6 +1158,8 @@ In such a case those methods become automatically private, so to call them we mu
         Interface2 myVar2 = new ChildClass();
         myVar2.Method1();
 
+<br><br>
+
 # Namespaces
 Collection of classes, interfaces, structures, delegate types, enumerations etc
 
@@ -1177,6 +1200,8 @@ Normally we would have to create a namespace, program, and a static void main an
 Internally they're converted into a static async void Main, so if we're using a top level statement we can't declare our own static async void Main. We can only use one set of top level statements per cs file in a project. (1 per compiling unit).
 Local vars or functions cannot be accessed from outside the top level statements.
 
+<br><br>
+
 # Enums
 It's a set of constants.Should be placed at a namespace level so it can be used from the whole library. It's value type so it can't be null.
 
@@ -1196,7 +1221,9 @@ It's a set of constants.Should be placed at a namespace level so it can be used 
         Month month = Month.Jan;
         Console.WriteLine(month); -> result is Jan
         Console.WriteLine((int)month); -> result is 1
-        
+
+<br><br>
+       
 # Structs
 As opposed to classes (ref types), structs are value types.
 So, if you create an instance of class it can be null, but not for a struct. It's value type so it can't be null.
@@ -1217,7 +1244,7 @@ A struct can implement interfaces and can have defined constructors<br>
         }
         //on the caller
         Game game = new Game(); //calls the paramless ctor in CLR
-        game.Display("luis");
+        game.Display("john");
 
 ## Read-only structs & paramless ctor
 In general, structures are better to represent immutable objects as they contain the data directly and it's best to make it readonly.
@@ -1244,9 +1271,9 @@ or
         _myPrivateField1 = 0
         _myPrivateField2 = 1
         
-        public MyStruct()
-        {
-        }
+        public MyStruct(){}
+
+<br>
 
 # System.Object class
 Is a pre-defined class which is the ultimate base class in .net. System.ValueType (that has structs & enums as children), Classes and Interfaces inherit from Object. So we can cast or implicitly convert every instance or value to System.Object.
@@ -1267,6 +1294,8 @@ Unboxing - conversion from a ref-type to a value-type (ex: from object to int). 
 
         object obj = 10;
         int myVar = (int)obj //Unboxing
+
+<br><br>
 
 # Generic class
 It's a class where the fields datatypes can be remain undefined from within, meaning that it becomes the responsibility of the caller to pass in the type that he desires. Commonly know as T.
@@ -1312,6 +1341,8 @@ We can have generic params in a method as well and perform logic related to the 
                 }
         }
 
+<br><br>
+
 # Nullables
 All value types are non nullable types (because they must have memory allocated in the stack)<br>
 The ref datatypes are null by default
@@ -1338,6 +1369,8 @@ Null forgiving operator
         num8!.ToString()  //Tells the compiler "I'm sure the var here isn't null"
 
 Nullable type has a HasValue bool property that we can use to assert if in fact is null or has value. To get to the value we can MyProperty.Value
+
+<br><br>
 
 # Delegates
 It's a var that stores a ref to one or more methods and are used to call those methods indirectly.
@@ -1642,8 +1675,8 @@ Instead of creating named methods that we sometimes only use once, we can also c
 
 ### Event Handler
 Its a pre-defined generic-delegate type, which we can use to create events quickly.
-Has 2 params (object sender, eventArgs e)
-Must be void<br>
+Has 2 params (object sender, eventArgs e).<br>
+Must be void.<br>
 
 object sender: represents the source object;
 eventArgs e: represents additional params to pass to the event handler method in the subscriber class.
@@ -1675,7 +1708,7 @@ Whenever we have a single statement, single value or a simple expression method 
         public void MyMethod() => statement;
 
         //for example in a ctor
-        public Student() => StudentName = "Luís";
+        public Student() => StudentName = "John";
 
         //for example to get and set
         public string StudentName
@@ -1698,6 +1731,8 @@ They can't access anything from outside itself (besides other static and const f
                                 return false;   
                 }
         );
+
+<br><br>
 
 # Immutable classes and Init-only property
 Need of immutability: Avoid unexpected value changes in response data retrieved from API servers.
@@ -1753,7 +1788,9 @@ The Dispose method is automatically called if we're using the "using structure" 
 
 using structure calls the Dispose() at the end of the block, as the using declaration only at the end of the scope (method where it's called).
 So for example of a db connection we can use the using statement and implement the IDisposible and on the Dispose method have the logic to disconnect from the db.
-        
+
+<br><br>
+
 # Arrays
 Are stored in continuos-memory locations in the heap
 
@@ -1834,7 +1871,6 @@ or
                         {210,211,212},
                         {220,221,222}
                 },
-
         };
 
 or
@@ -1866,6 +1902,8 @@ matrixIndexes.GetLength(2) to get the number of columns<br>
                 new int[] {2,3,4,5},
                 new int[] {6,7,8,9}
         };
+
+<br><br>
 
 # Collections (Generic and Non-Generic)
 Collections are the standard-way to store and manipulate groups of elements. They can be of type generic (only one type admitted) or non-generic (every type assortment). We can declare it without define nr of elements, and also we can add and remove elements.
@@ -1977,7 +2015,7 @@ Lookup: O(n) (has to traverse every node)
 SortedList is more memory efficient and faster when it needs to iterate through all.
 SortedDictionary takes less time to insert and remove items.
 
-### HashSet<\T>
+### HashSet\<T>
 Lookup: O(1) (because of the hashing) (O(n) if we have collisions)
 Insert: O(1) 
 Add/remove: O(1)
@@ -2138,11 +2176,12 @@ Contains the .Equals method for us to specify, by comparing by example every pro
 Contains the CompareTo method for us to specify. Its what the sort will base itself to sort the collection.
 It will compare the 2nd element to the 1st, the 3rd to the 2nd, etc.The method returns int and the value it returns will be descriptive of what its relative position in relation to the object that is being compared to:
 
- returns 0 = Means that the "this" and the object are in the same position (unchanged)
- returns <0 = Means that the "this" comes first than the param
- returns >0 = Means that the "this" comes after than the param 
+ returns 0 = Means that the "this" and the object are in the same position (unchanged) <br>
+ returns <0 = Means that the "this" comes first than the param <br>
+ returns >0 = Means that the "this" comes after than the param <br>
 
 Ex:
+
         //In case of comparing ints (will return -1,0,1)
         Employee otherEmp = (Employee)other;
         return this.EmpId - otherEmp.EmpId
@@ -2374,6 +2413,8 @@ This implies IConsumer\<Base> : IConsumer\<Derived> aka Contravariant. Consumer 
                 Consume(T obj); 
         }
 
+<br><br>
+
 # Anonymous Types
 Quickly grouping of properties by creating an object without first creating a class. Always created by using the keyword "var" and cannot be cast to other type than System.Object.
 The compiler will create the class on the background with (by default) public read-only auto-implemented properties. Every property must be initialized for the compiler to infer the type of the property, can't be null or else the compiler wouldn't be capable of inferring the type.
@@ -2401,6 +2442,8 @@ Every object must have the same properties
         }
 
 To loop through it we can use the var keyword on a foreach for ex.
+
+<br><br>
 
 # Tuples
 Similar to an anonymous object, but its preferred when we need to pass it as an arg and/or a return type because with tuples we can see the properties and don't have to box/unbox.
@@ -2528,19 +2571,20 @@ Instead of landing the tuple on each local var, we can simply call the method th
 				select number;    
 
 	//example of a join
-	IEnumerable<Student> beijingStudents = from student in students     join university in universities
-            on student.UniversityId equals university.Id
-            where university.Name == "Beijing Tech"
-            select student;
+	IEnumerable<Student> beijingStudents = from student in students 
+        join university in universities
+        on student.UniversityId equals university.Id
+        where university.Name == "Beijing Tech"
+        select student;
      
 	// casting to a new collection
-	var newCollection = 
-        from student in students
+	var newCollection = from student in students
 	join university in universities
 	on student.UniversityId equals university.Id
 	orderby student.Name
-	select new {StudentName = student.Name, 
-	UniversityName = university.Name};
+	select new 
+                {StudentName = student.Name, 
+                UniversityName = university.Name};
 
 ## Linq with XML
 
@@ -2576,6 +2620,8 @@ Instead of landing the tuple on each local var, we can simply call the method th
                 Age = student.Element("Age").Value,
                 University = student.Element("University").Value
         };
+
+<br><br>
 
 # System.IO namespace
 ## File Class (static)
@@ -2870,6 +2916,8 @@ Problem with this approach is that only works with .NET.
         StreamReader streamReader = new StreamReader();
         ClassToSerialize myExampleClass2 = xmlSerializer.Deserialize(streamReader.ReadToEnd()) as ClassToSerialize;
 
+<br><br>
+
 # System.Math Class
 
         Math.Ceiling(15.4) => result 16
@@ -2883,6 +2931,8 @@ Problem with this approach is that only works with .NET.
         Math.Sign(3.45)    => returns -1 if the nr is negative, 0 if 0, 1 if it's positive 
         Math.DivRem(10,3, out reminder)  => returns the quotient and outs the remainder value
 
+<br><br>
+
 # Random Class
 
         //create a dice that has 10 throws
@@ -2895,6 +2945,8 @@ Problem with this approach is that only works with .NET.
                 Console.WriteLine(numEyes);
         }
 
+<br><br>
+
 # Debugging
 * Start Debugging - F5
 * Break Point - F9
@@ -2905,6 +2957,8 @@ Problem with this approach is that only works with .NET.
 * Watch - Where you can add items to watch and see the var evolve;
 * Locals - Shows the vars in the same scope;
 * Call stack - Shows the order of methods that were called until arriving at the current execution line;
+
+<br><br>
 
 # Exception Handling
 ## Try/Catch/Finally
@@ -2993,6 +3047,8 @@ Catches the exception when the condition is true
         {
                 //some catch code
         }
+
+<br><br>
 
 # Pattern Matching
 ## Type Pattern
@@ -3109,6 +3165,8 @@ We can analyze multiple properties and then make the casting to the var if neede
                 Person {Gender:"Female", BirthDate.DateOfBirth.Year: > 2000} p => "Miss. {p.Name}";
         }
 
+<br><br>
+
 # Records
 It allows to create an immutable ref type in a shortcut syntax. It offers value based equality, inheritance, nested records etc.
 
@@ -3120,7 +3178,7 @@ They can be nested:
         public record Person(string Name, int Age, Address PersonAddress);
         public record Address(string City);
 
-        new Person luis = new("Luís", 20, new Address("Fribourg"));
+        new Person john = new("John", 20, new Address("Zurich"));
 
 Nevertheless, we can add mutable props {get; set;} if we choose too.
 
@@ -3132,12 +3190,12 @@ Nevertheless, we can add mutable props {get; set;} if we choose too.
 ## Records - Equality
 We can compare records with the Equals method. This method will compare the prop values and not the ref.
 
-        new Person luis = new("Luís", 20, new Address("Fribourg"));
-        new Person luis2 = new("Luís", 20, new Address("Fribourg"));
+        new Person john = new("John", 20, new Address("Zurich"));
+        new Person john2 = new("John", 20, new Address("Zurich"));
 
-        Console.WriteLine(luis.Equals(luis2)); //Output true
+        Console.WriteLine(john.Equals(john2)); //Output true
         //or
-        Console.WriteLine(luis == luis2); //Output true
+        Console.WriteLine(john == john2); //Output true
 
 ## Records - Copy & "with" keyword
 person1 = person2 //ref copy (new ref var to the same object)
@@ -3150,7 +3208,7 @@ The record type class already has a pre-built deconstruct method.
         public record Person(string Name, int Age, Address PersonAddress);
         public record Address(string City, string Country);
 
-        Person person1 = new("Luís", 35, new Address("Fribourg","Switzerland"));
+        Person person1 = new("John", 34, new Address("Zurich","Switzerland"));
         var (name,age, (city, country)) = person1; 
 
         Console.WriteLine(name); 
@@ -3189,7 +3247,7 @@ A record can inherit from another record and interfaces but not from other class
 
         public record Employee(string? Name, DateTime? DateOfBirth, double? Salary) : Person(Name, DateOfBirth);
 
-        Employee emp = new Employee("Luís", DateTime.Parse("1987-08-02"), 5000);
+        Employee emp = new Employee("John", DateTime.Parse("1987-08-02"), 5000);
 
 PS: A class can't inherit from a record.
 
@@ -3218,10 +3276,12 @@ Your data should be a struct if:
 
 Does your data encapsulate some sort of a complex value? And is the value immutable? And do you use it in unidirectional (one way) flow?
 
-If yes => Record
+If yes => Record <br>
 If no => Class
 
 use records for your DTOs if it is one way flow, for request bindings and search params.
+
+<br><br>
 
 # Threading
 A thread is a light-weight unit of execution within a process. By default, C# apps execute under the main thread. Benefits are improved performance and ui responsiveness
@@ -3647,10 +3707,10 @@ This is important because in case of reset events as they keep state there's no 
 ## Concurrent Collections
 They're optimized for multi-threaded access. (thread-safe access). The benefit is we don't need explicit lock or monitor. For simple cases where we don't need the fine control over the access.
 
-* ConcurrentStack<\T> => TryPop and TryPeek
-* ConcurrentQueue<\T> => Dequeue becomes TryDequeue with an out param
-* ConcurrentDictionary<\T>  => TryAdd, TryGetValue, TryRemove, TryUpdate
-* ConcurrentBag<\T> - Unordered collection (like HashSet) => TryTake, TryPeek
+* ConcurrentStack\<T> => TryPop and TryPeek
+* ConcurrentQueue\<T> => Dequeue becomes TryDequeue with an out param
+* ConcurrentDictionary\<T>  => TryAdd, TryGetValue, TryRemove, TryUpdate
+* ConcurrentBag\<T> - Unordered collection (like HashSet) => TryTake, TryPeek
 
 ## CSV with Threads
 In this example we have a csv file with 1000 rows of data. We will create a thread for each 100 rows and will process each chunk per thread. The main thread reads the first 100 rows and start new threads. We'll keep our threads in a thread collection. For each chunk we must calculate a gender wise count and print it to the console.
@@ -3898,6 +3958,8 @@ Collection of worker threads that are pre-allocated and managed by the .NET runt
         thread.Start();
         var test = taskCompletionSource.Task.Result;
 
+<br><br>
+
 # Tasks
 TPL - Task Parallel Library internally works based on Thread pool. It provides a higher-level abstraction to implement concurrency, parallelism, and asynchronous programming. We create tasks that get scheduled by the Task Scheduler which is responsible for managing the execution of tasks. Advantages are abstraction, efficient resource utilization, cancellation (via cancellationToken), AsynchronousProgramming, Parallelism and Task continuations. 
 
@@ -4054,8 +4116,6 @@ Represents an asynchronous operation that produces a result of TResult. Taking t
                         Console.WriteLine(task1.Result);
                         Console.WriteLine(task2.Result);
                 }
-
-
 
 ## Task.WaitAny
 Used to block the current thread, waiting for the completion of any on of the specified tasks before proceeding. It returns the index of the 1st finishing task that was passed in the array.
@@ -4225,6 +4285,8 @@ Create a task1 that writes to file and a task2 that reads from file. The task2 o
                 }
         }
 
+<br><br>
+
 # Asynchronous Programming
 Until now we could call the .Wait methods that would block the calling thread, or we could have continuation tasks that wouldn't block the calling thread but that render the code complex and difficult to read.
 Async and await keywords allows us to implement Asynchronous programming.
@@ -4285,6 +4347,8 @@ Let's take the prior example and migrate it to async:
 * Avoid Task.Run. Use instead await.
 * Use cancellation token for cancellation. When writing methods, consider method overloads to receive cancellation tokens in case we want to give the option to the user to cancel the current execution.
 * Measure and Optimize - use stopwatch and diagnostic tools to identify and address performance issues.
+
+<br><br>
 
 # .NET Cli
 is a cross-platform toolchain for developing, building, running, and publishing .NET applications.
@@ -4373,6 +4437,7 @@ To create a tool and pack it as a nupkg
         //to run it
         sayconf
 
+<br><br>
 
 # Time Complexity
 O() - Big O notation , represents how expandible our algo is in its worse case scenario.
@@ -4382,6 +4447,8 @@ O() - Big O notation , represents how expandible our algo is in its worse case s
 * O(n^2) quadratic - these are the ones to avoid. When we have nested loops that make the time complexity become exponential.
 
 * O(log n) logarithmic - what we want to strive for in our solutions. It's complexity is logarithmic, meaning for each item added to the processing list, we will have added less than 1 unit of the corresponding processing needs.
+
+<br><br>
 
 # Desktop Application Architecture
 From top to bottom
