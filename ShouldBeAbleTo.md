@@ -1,3 +1,14 @@
+# C\# ShouldBeAbleTo Study Guide
+
+This document serves as an iterative learning test for understanding and mastering C#. The process involves attempting to answer questions, reviewing incorrect or unknown answers, and iterating until all answers can be provided confidently without consulting external sources.
+The source for these are the Udemy Course here: https://www.udemy.com/course/c-sharp-oop-ultimate-guide-project-master-class/learn/lecture/20471823?start=0#overview
+
+## Test Instructions
+- Make a first attempt to answer each question to the best of your ability.
+- For any questions you cannot answer or answer incorrectly, mark them for review.
+- Consult sources to find the correct answers for those marked questions.
+- Revisit the marked questions in subsequent study sessions until you can answer them without assistance.
+
 # Section 1: Course Fundamentals (Theory)
 1. Explain what is .NET vs C#
 2. .NET architecture and main components
